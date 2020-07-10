@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class Refrigerator implements Device {
-
-//    Refrigerator : POWER_CONSUMPTION=100, WEIGHT=20, FREEZER_CAPACITY=10, OVERALL_CAPACITY=300, HEIGHT=200, WIDTH=70
-//    Refrigerator : POWER_CONSUMPTION=200, WEIGHT=30, FREEZER_CAPACITY=15, OVERALL_CAPACITY=300, HEIGHT=180, WIDTH=80
-//    Refrigerator : POWER_CONSUMPTION=150, WEIGHT=35, FREEZER_CAPACITY=20, OVERALL_CAPACITY=350.5, HEIGHT=250, WIDTH=75
 
     private Integer power_consumption;
     private Integer weight;
@@ -33,6 +31,24 @@ public class Refrigerator implements Device {
         this.overall_capacity = overall_capacity;
         this.height = height;
         this.width = width;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Refrigerator that = (Refrigerator) o;
+        return Objects.equals(power_consumption, that.power_consumption) &&
+                Objects.equals(weight, that.weight) &&
+                Objects.equals(freezer_capacity, that.freezer_capacity) &&
+                Objects.equals(overall_capacity, that.overall_capacity) &&
+                Objects.equals(height, that.height) &&
+                Objects.equals(width, that.width);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, weight, freezer_capacity, overall_capacity, height, width);
     }
 
     @Override

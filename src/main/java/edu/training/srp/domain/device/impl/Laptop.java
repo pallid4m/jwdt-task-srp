@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class Laptop implements Device {
-
-//    Laptop : BATTERY_CAPACITY=1, OS=Windows, MEMORY_ROM=4000, SYSTEM_MEMORY=1000, CPU=1.2, DISPLAY_INCHS=18
-//    Laptop : BATTERY_CAPACITY=1.5, OS=Linux, MEMORY_ROM=8000, SYSTEM_MEMORY=1000, CPU=2.2, DISPLAY_INCHS=19
-//    Laptop : BATTERY_CAPACITY=3, OS=Windows, MEMORY_ROM=8000, SYSTEM_MEMORY=1500, CPU=3.2, DISPLAY_INCHS=22
 
     private Double battery_capacity;
     private String os;
@@ -33,6 +31,24 @@ public class Laptop implements Device {
         this.system_memory = system_memory;
         this.cpu = cpu;
         this.display_inchs = display_inchs;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Laptop laptop = (Laptop) o;
+        return Objects.equals(battery_capacity, laptop.battery_capacity) &&
+                Objects.equals(os, laptop.os) &&
+                Objects.equals(memory_rom, laptop.memory_rom) &&
+                Objects.equals(system_memory, laptop.system_memory) &&
+                Objects.equals(cpu, laptop.cpu) &&
+                Objects.equals(display_inchs, laptop.display_inchs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(battery_capacity, os, memory_rom, system_memory, cpu, display_inchs);
     }
 
     @Override

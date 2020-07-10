@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class TabletPC implements Device {
-
-//    TabletPC : BATTERY_CAPACITY=3, DISPLAY_INCHES=14, MEMORY_ROM=8000, FLASH_MEMORY_CAPACITY=2, COLOR=blue
-//    TabletPC : BATTERY_CAPACITY=4, DISPLAY_INCHES=15, MEMORY_ROM=8000, FLASH_MEMORY_CAPACITY=6, COLOR=red
-//    TabletPC : BATTERY_CAPACITY=5, DISPLAY_INCHES=16, MEMORY_ROM=16000, FLASH_MEMORY_CAPACITY=8, COLOR=green
 
     private Integer battery_capacity;
     private Integer display_inches;
@@ -30,6 +28,23 @@ public class TabletPC implements Device {
         this.memory_rom = memory_rom;
         this.flash_memory_capacity = flash_memory_capacity;
         this.color = color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TabletPC tabletPC = (TabletPC) o;
+        return Objects.equals(battery_capacity, tabletPC.battery_capacity) &&
+                Objects.equals(display_inches, tabletPC.display_inches) &&
+                Objects.equals(memory_rom, tabletPC.memory_rom) &&
+                Objects.equals(flash_memory_capacity, tabletPC.flash_memory_capacity) &&
+                Objects.equals(color, tabletPC.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(battery_capacity, display_inches, memory_rom, flash_memory_capacity, color);
     }
 
     @Override

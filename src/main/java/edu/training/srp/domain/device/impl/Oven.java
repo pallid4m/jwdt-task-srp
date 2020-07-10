@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class Oven implements Device {
-
-//    Oven : POWER_CONSUMPTION=1000, WEIGHT=10, CAPACITY=32, DEPTH=60, HEIGHT=45.5, WIDTH=59.5
-//    Oven : POWER_CONSUMPTION=1500, WEIGHT=12, CAPACITY=33, DEPTH=60, HEIGHT=45, WIDTH=68
-//    Oven : POWER_CONSUMPTION=2000, WEIGHT=11, CAPACITY=33, DEPTH=60, HEIGHT=40, WIDTH=70
 
     private Integer power_consumption;
     private Integer weight;
@@ -33,6 +31,24 @@ public class Oven implements Device {
         this.depth = depth;
         this.height = height;
         this.width = width;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Oven oven = (Oven) o;
+        return Objects.equals(power_consumption, oven.power_consumption) &&
+                Objects.equals(weight, oven.weight) &&
+                Objects.equals(capacity, oven.capacity) &&
+                Objects.equals(depth, oven.depth) &&
+                Objects.equals(height, oven.height) &&
+                Objects.equals(width, oven.width);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, weight, capacity, depth, height, width);
     }
 
     @Override

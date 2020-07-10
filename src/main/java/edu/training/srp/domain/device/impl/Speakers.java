@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class Speakers implements Device {
-
-//    Speakers : POWER_CONSUMPTION=15, NUMBER_OF_SPEAKERS=2, FREQUENCY_RANGE=2-4, CORD_LENGTH=2
-//    Speakers : POWER_CONSUMPTION=20, NUMBER_OF_SPEAKERS=3, FREQUENCY_RANGE=3-4, CORD_LENGTH=3
-//    Speakers : POWER_CONSUMPTION=17, NUMBER_OF_SPEAKERS=4, FREQUENCY_RANGE=2-3.5, CORD_LENGTH=4
 
     private Integer power_consumption;
     private Integer number_of_speakers;
@@ -27,6 +25,22 @@ public class Speakers implements Device {
         this.number_of_speakers = number_of_speakers;
         this.frequency_range = frequency_range;
         this.cord_length = cord_length;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Speakers speakers = (Speakers) o;
+        return Objects.equals(power_consumption, speakers.power_consumption) &&
+                Objects.equals(number_of_speakers, speakers.number_of_speakers) &&
+                Objects.equals(frequency_range, speakers.frequency_range) &&
+                Objects.equals(cord_length, speakers.cord_length);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, number_of_speakers, frequency_range, cord_length);
     }
 
     @Override

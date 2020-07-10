@@ -1,13 +1,10 @@
-package edu.training.srp.device;
+package edu.training.srp.domain.device;
 
-import edu.training.srp.device.impl.*;
+import edu.training.srp.domain.device.impl.*;
 
 public class DeviceFactory {
 
     public static Device createDevice(String device, String[] params) {
-        if (device.isBlank()) {
-            return null;
-        }
         if (device.equalsIgnoreCase( "Laptop")) {
             return new Laptop(params);
         }

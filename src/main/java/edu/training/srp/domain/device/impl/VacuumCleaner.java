@@ -1,12 +1,10 @@
-package edu.training.srp.device.impl;
+package edu.training.srp.domain.device.impl;
 
-import edu.training.srp.device.Device;
+import edu.training.srp.domain.device.Device;
+
+import java.util.Objects;
 
 public class VacuumCleaner implements Device {
-
-//    VacuumCleaner : POWER_CONSUMPTION=100, FILTER_TYPE=A, BAG_TYPE=A2, WAND_TYPE=all-in-one, MOTOR_SPEED_REGULATION=3000, CLEANING_WIDTH=20
-//    VacuumCleaner : POWER_CONSUMPTION=110, FILTER_TYPE=B, BAG_TYPE=AA-89, WAND_TYPE=all-in-one, MOTOR_SPEED_REGULATION=2900, CLEANING_WIDTH=25
-//    VacuumCleaner : POWER_CONSUMPTION=90, FILTER_TYPE=C, BAG_TYPE=XX00, WAND_TYPE=all-in-one, MOTOR_SPEED_REGULATION=2950, CLEANING_WIDTH=30
 
     private Integer power_consumption;
     private String filter_type;
@@ -33,6 +31,24 @@ public class VacuumCleaner implements Device {
         this.wand_type = wand_type;
         this.motor_speed_regulation = motor_speed_regulation;
         this.cleaning_width = cleaning_width;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VacuumCleaner that = (VacuumCleaner) o;
+        return Objects.equals(power_consumption, that.power_consumption) &&
+                Objects.equals(filter_type, that.filter_type) &&
+                Objects.equals(bag_type, that.bag_type) &&
+                Objects.equals(wand_type, that.wand_type) &&
+                Objects.equals(motor_speed_regulation, that.motor_speed_regulation) &&
+                Objects.equals(cleaning_width, that.cleaning_width);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, filter_type, bag_type, wand_type, motor_speed_regulation, cleaning_width);
     }
 
     @Override
