@@ -4,7 +4,7 @@ public final class ApplianceFactory {
 
     private ApplianceFactory() {}
 
-    public static Appliance createAppliance(String applianceName, String[] params) {
+    public static Object createAppliance(String applianceName, String[] params) {
         if (applianceName.equals(Oven.class.getSimpleName())) {
             return Oven.builder()
                     .setPowerConsumption(Integer.valueOf(params[0]))

@@ -2,54 +2,43 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class TabletPC extends Appliance {
+public class TabletPC {
+    private final Integer batteryCapacity;
+    private final Integer displayInches;
+    private final Integer memoryRom;
+    private final Integer flashMemoryCapacity;
+    private final String color;
 
-    private Integer batteryCapacity;
-    private Integer displayInches;
-    private Integer memoryRom;
-    private Integer flashMemoryCapacity;
-    private String color;
-
-    public TabletPC() {}
+    private TabletPC(Builder builder) {
+        batteryCapacity = builder.batteryCapacity;
+        displayInches = builder.displayInches;
+        memoryRom = builder.memoryRom;
+        flashMemoryCapacity = builder.flashMemoryCapacity;
+        color = builder.color;
+    }
 
     public Integer getBatteryCapacity() {
         return batteryCapacity;
-    }
-
-    public void setBatteryCapacity(Integer batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
     }
 
     public Integer getDisplayInches() {
         return displayInches;
     }
 
-    public void setDisplayInches(Integer displayInches) {
-        this.displayInches = displayInches;
-    }
-
     public Integer getMemoryRom() {
         return memoryRom;
-    }
-
-    public void setMemoryRom(Integer memoryRom) {
-        this.memoryRom = memoryRom;
     }
 
     public Integer getFlashMemoryCapacity() {
         return flashMemoryCapacity;
     }
 
-    public void setFlashMemoryCapacity(Integer flashMemoryCapacity) {
-        this.flashMemoryCapacity = flashMemoryCapacity;
-    }
-
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -78,18 +67,6 @@ public class TabletPC extends Appliance {
                 ", flashMemoryCapacity=" + flashMemoryCapacity +
                 ", color='" + color + '\'' +
                 '}';
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public TabletPC(Builder builder) {
-        batteryCapacity = builder.batteryCapacity;
-        displayInches = builder.displayInches;
-        memoryRom = builder.memoryRom;
-        flashMemoryCapacity = builder.flashMemoryCapacity;
-        color = builder.color;
     }
 
     public static class Builder {

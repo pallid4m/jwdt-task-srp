@@ -1,6 +1,5 @@
 package edu.training.srp.main;
 
-import edu.training.srp.entity.Appliance;
 import edu.training.srp.entity.Oven;
 import edu.training.srp.entity.Laptop;
 import edu.training.srp.entity.Refrigerator;
@@ -11,7 +10,7 @@ import edu.training.srp.entity.criteria.SearchCriteria;
 
 public class PrintApplianceInfo {
 
-    public static void print(Appliance appliance) {
+    public static void print(Object appliance) {
         if (appliance == null) {
             return;
         }
@@ -20,22 +19,22 @@ public class PrintApplianceInfo {
         info.append(applianceName).append(" : ");
 
         String applianceView = "";
-        if (applianceName.equals(SearchCriteria.Oven.class.getSimpleName())) {
+        if (applianceName.equals(Oven.class.getSimpleName())) {
             Oven oven = (Oven) appliance;
             applianceView = view(oven);
-        } else if (applianceName.equals(SearchCriteria.Laptop.class.getSimpleName())) {
+        } else if (applianceName.equals(Laptop.class.getSimpleName())) {
             Laptop laptop = (Laptop) appliance;
             applianceView = view(laptop);
-        } else if (applianceName.equals(SearchCriteria.Refrigerator.class.getSimpleName())) {
+        } else if (applianceName.equals(Refrigerator.class.getSimpleName())) {
             Refrigerator refrigerator = (Refrigerator) appliance;
             applianceView = view(refrigerator);
-        } else if (applianceName.equals(SearchCriteria.VacuumCleaner.class.getSimpleName())) {
+        } else if (applianceName.equals(VacuumCleaner.class.getSimpleName())) {
             VacuumCleaner vacuumCleaner = (VacuumCleaner) appliance;
             applianceView = view(vacuumCleaner);
-        } else if (applianceName.equals(SearchCriteria.TabletPC.class.getSimpleName())) {
+        } else if (applianceName.equals(TabletPC.class.getSimpleName())) {
             TabletPC tabletPC = (TabletPC) appliance;
             applianceView = view(tabletPC);
-        } else if (applianceName.equals(SearchCriteria.Speakers.class.getSimpleName())) {
+        } else if (applianceName.equals(Speakers.class.getSimpleName())) {
             Speakers speakers = (Speakers) appliance;
             applianceView = view(speakers);
         }

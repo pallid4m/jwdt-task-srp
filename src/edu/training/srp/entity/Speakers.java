@@ -2,45 +2,37 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Speakers extends Appliance {
+public class Speakers {
+    private final Integer powerConsumption;
+    private final Integer numberOfSpeakers;
+    private final String frequencyRange;
+    private final Integer cordLength;
 
-    private Integer powerConsumption;
-    private Integer numberOfSpeakers;
-    private String frequencyRange;
-    private Integer cordLength;
-
-    public Speakers() {}
+    private Speakers(Builder builder) {
+        powerConsumption = builder.powerConsumption;
+        numberOfSpeakers = builder.numberOfSpeakers;
+        frequencyRange = builder.frequencyRange;
+        cordLength = builder.cordLength;
+    }
 
     public Integer getPowerConsumption() {
         return powerConsumption;
-    }
-
-    public void setPowerConsumption(Integer powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public Integer getNumberOfSpeakers() {
         return numberOfSpeakers;
     }
 
-    public void setNumberOfSpeakers(Integer numberOfSpeakers) {
-        this.numberOfSpeakers = numberOfSpeakers;
-    }
-
     public String getFrequencyRange() {
         return frequencyRange;
-    }
-
-    public void setFrequencyRange(String frequencyRange) {
-        this.frequencyRange = frequencyRange;
     }
 
     public Integer getCordLength() {
         return cordLength;
     }
 
-    public void setCordLength(Integer cordLength) {
-        this.cordLength = cordLength;
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -67,17 +59,6 @@ public class Speakers extends Appliance {
                 ", frequencyRange='" + frequencyRange + '\'' +
                 ", cordLength=" + cordLength +
                 '}';
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Speakers(Builder builder) {
-        powerConsumption = builder.powerConsumption;
-        numberOfSpeakers = builder.numberOfSpeakers;
-        frequencyRange = builder.frequencyRange;
-        cordLength = builder.cordLength;
     }
 
     public static class Builder {

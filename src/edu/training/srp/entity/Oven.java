@@ -2,63 +2,49 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Oven extends Appliance {
+public class Oven {
+    private final Integer powerConsumption;
+    private final Integer weight;
+    private final Integer capacity;
+    private final Integer depth;
+    private final Double height;
+    private final Double width;
 
-    private Integer powerConsumption;
-    private Integer weight;
-    private Integer capacity;
-    private Integer depth;
-    private Double height;
-    private Double width;
-
-    public Oven() {}
+    private Oven(Builder builder) {
+        powerConsumption = builder.powerConsumption;
+        weight = builder.weight;
+        capacity = builder.capacity;
+        depth = builder.depth;
+        height = builder.height;
+        width = builder.width;
+    }
 
     public Integer getPowerConsumption() {
         return powerConsumption;
-    }
-
-    public void setPowerConsumption(Integer powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
     public Integer getCapacity() {
         return capacity;
-    }
-
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
     }
 
     public Integer getDepth() {
         return depth;
     }
 
-    public void setDepth(Integer depth) {
-        this.depth = depth;
-    }
-
     public Double getHeight() {
         return height;
-    }
-
-    public void setHeight(Double height) {
-        this.height = height;
     }
 
     public Double getWidth() {
         return width;
     }
 
-    public void setWidth(Double width) {
-        this.width = width;
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -89,19 +75,6 @@ public class Oven extends Appliance {
                 ", height=" + height +
                 ", width=" + width +
                 '}';
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Oven(Builder builder) {
-        powerConsumption = builder.powerConsumption;
-        weight = builder.weight;
-        capacity = builder.capacity;
-        depth = builder.depth;
-        height = builder.height;
-        width = builder.width;
     }
 
     public static class Builder {

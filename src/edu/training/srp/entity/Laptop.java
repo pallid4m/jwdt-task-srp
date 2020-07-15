@@ -2,63 +2,49 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Laptop extends Appliance {
+public class Laptop {
+    private final Double batteryCapacity;
+    private final String os;
+    private final Integer memoryRom;
+    private final Integer systemMemory;
+    private final Double cpu;
+    private final Integer displayInchs;
 
-    private Double batteryCapacity;
-    private String os;
-    private Integer memoryRom;
-    private Integer systemMemory;
-    private Double cpu;
-    private Integer displayInchs;
-
-    public Laptop() {}
+    private Laptop(Builder builder) {
+        batteryCapacity = builder.batteryCapacity;
+        os = builder.os;
+        memoryRom = builder.memoryRom;
+        systemMemory = builder.systemMemory;
+        cpu = builder.cpu;
+        displayInchs = builder.displayInchs;
+    }
 
     public Double getBatteryCapacity() {
         return batteryCapacity;
-    }
-
-    public void setBatteryCapacity(Double batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
     }
 
     public String getOs() {
         return os;
     }
 
-    public void setOs(String os) {
-        this.os = os;
-    }
-
     public Integer getMemoryRom() {
         return memoryRom;
-    }
-
-    public void setMemoryRom(Integer memoryRom) {
-        this.memoryRom = memoryRom;
     }
 
     public Integer getSystemMemory() {
         return systemMemory;
     }
 
-    public void setSystemMemory(Integer systemMemory) {
-        this.systemMemory = systemMemory;
-    }
-
     public Double getCpu() {
         return cpu;
-    }
-
-    public void setCpu(Double cpu) {
-        this.cpu = cpu;
     }
 
     public Integer getDisplayInchs() {
         return displayInchs;
     }
 
-    public void setDisplayInchs(Integer displayInchs) {
-        this.displayInchs = displayInchs;
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -89,19 +75,6 @@ public class Laptop extends Appliance {
                 ", cpu=" + cpu +
                 ", displayInchs=" + displayInchs +
                 '}';
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Laptop(Builder builder) {
-        batteryCapacity = builder.batteryCapacity;
-        os = builder.os;
-        memoryRom = builder.memoryRom;
-        systemMemory = builder.systemMemory;
-        cpu = builder.cpu;
-        displayInchs = builder.displayInchs;
     }
 
     public static class Builder {

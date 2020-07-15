@@ -2,63 +2,49 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Refrigerator extends Appliance {
+public class Refrigerator {
+    private final Integer powerConsumption;
+    private final Integer weight;
+    private final Integer freezerCapacity;
+    private final Double overallCapacity;
+    private final Integer height;
+    private final Integer width;
 
-    private Integer powerConsumption;
-    private Integer weight;
-    private Integer freezerCapacity;
-    private Double overallCapacity;
-    private Integer height;
-    private Integer width;
-
-    public Refrigerator() {}
+    private Refrigerator(Builder builder) {
+        powerConsumption = builder.powerConsumption;
+        weight = builder.weight;
+        freezerCapacity = builder.freezerCapacity;
+        overallCapacity = builder.overallCapacity;
+        height = builder.height;
+        width = builder.width;
+    }
 
     public Integer getPowerConsumption() {
         return powerConsumption;
-    }
-
-    public void setPowerConsumption(Integer powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
     public Integer getFreezerCapacity() {
         return freezerCapacity;
-    }
-
-    public void setFreezerCapacity(Integer freezerCapacity) {
-        this.freezerCapacity = freezerCapacity;
     }
 
     public Double getOverallCapacity() {
         return overallCapacity;
     }
 
-    public void setOverallCapacity(Double overallCapacity) {
-        this.overallCapacity = overallCapacity;
-    }
-
     public Integer getHeight() {
         return height;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
     }
 
     public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public static Builder builder() {
+        return new Builder();
     }
 
     @Override
@@ -89,19 +75,6 @@ public class Refrigerator extends Appliance {
                 ", height=" + height +
                 ", width=" + width +
                 '}';
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Refrigerator(Builder builder) {
-        powerConsumption = builder.powerConsumption;
-        weight = builder.weight;
-        freezerCapacity = builder.freezerCapacity;
-        overallCapacity = builder.overallCapacity;
-        height = builder.height;
-        width = builder.width;
     }
 
     public static class Builder {
