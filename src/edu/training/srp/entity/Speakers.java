@@ -11,27 +11,36 @@ public class Speakers extends Appliance {
 
     public Speakers() {}
 
-    public Speakers(Integer powerConsumption, Integer numberOfSpeakers, String frequencyRange, Integer cordLength) {
-        this.powerConsumption = powerConsumption;
-        this.numberOfSpeakers = numberOfSpeakers;
-        this.frequencyRange = frequencyRange;
-        this.cordLength = cordLength;
-    }
-
     public Integer getPowerConsumption() {
         return powerConsumption;
+    }
+
+    public void setPowerConsumption(Integer powerConsumption) {
+        this.powerConsumption = powerConsumption;
     }
 
     public Integer getNumberOfSpeakers() {
         return numberOfSpeakers;
     }
 
+    public void setNumberOfSpeakers(Integer numberOfSpeakers) {
+        this.numberOfSpeakers = numberOfSpeakers;
+    }
+
     public String getFrequencyRange() {
         return frequencyRange;
     }
 
+    public void setFrequencyRange(String frequencyRange) {
+        this.frequencyRange = frequencyRange;
+    }
+
     public Integer getCordLength() {
         return cordLength;
+    }
+
+    public void setCordLength(Integer cordLength) {
+        this.cordLength = cordLength;
     }
 
     @Override

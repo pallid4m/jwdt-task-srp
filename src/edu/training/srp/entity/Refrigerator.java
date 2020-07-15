@@ -13,37 +13,52 @@ public class Refrigerator extends Appliance {
 
     public Refrigerator() {}
 
-    public Refrigerator(Integer powerConsumption, Integer weight, Integer freezerCapacity, Double overallCapacity, Integer height, Integer width) {
-        this.powerConsumption = powerConsumption;
-        this.weight = weight;
-        this.freezerCapacity = freezerCapacity;
-        this.overallCapacity = overallCapacity;
-        this.height = height;
-        this.width = width;
-    }
-
     public Integer getPowerConsumption() {
         return powerConsumption;
+    }
+
+    public void setPowerConsumption(Integer powerConsumption) {
+        this.powerConsumption = powerConsumption;
     }
 
     public Integer getWeight() {
         return weight;
     }
 
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
     public Integer getFreezerCapacity() {
         return freezerCapacity;
+    }
+
+    public void setFreezerCapacity(Integer freezerCapacity) {
+        this.freezerCapacity = freezerCapacity;
     }
 
     public Double getOverallCapacity() {
         return overallCapacity;
     }
 
+    public void setOverallCapacity(Double overallCapacity) {
+        this.overallCapacity = overallCapacity;
+    }
+
     public Integer getHeight() {
         return height;
     }
 
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
     public Integer getWidth() {
         return width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
     }
 
     @Override

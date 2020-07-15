@@ -13,37 +13,52 @@ public class Oven extends Appliance {
 
     public Oven() {}
 
-    public Oven(Integer powerConsumption, Integer weight, Integer capacity, Integer depth, Double height, Double width) {
-        this.powerConsumption = powerConsumption;
-        this.weight = weight;
-        this.capacity = capacity;
-        this.depth = depth;
-        this.height = height;
-        this.width = width;
-    }
-
     public Integer getPowerConsumption() {
         return powerConsumption;
+    }
+
+    public void setPowerConsumption(Integer powerConsumption) {
+        this.powerConsumption = powerConsumption;
     }
 
     public Integer getWeight() {
         return weight;
     }
 
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
     public Integer getCapacity() {
         return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public Integer getDepth() {
         return depth;
     }
 
+    public void setDepth(Integer depth) {
+        this.depth = depth;
+    }
+
     public Double getHeight() {
         return height;
     }
 
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+
     public Double getWidth() {
         return width;
+    }
+
+    public void setWidth(Double width) {
+        this.width = width;
     }
 
     @Override

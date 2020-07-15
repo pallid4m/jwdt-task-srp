@@ -13,37 +13,52 @@ public class Laptop extends Appliance {
 
     public Laptop() {}
 
-    public Laptop(Double batteryCapacity, String os, Integer memoryRom, Integer systemMemory, Double cpu, Integer displayInchs) {
-        this.batteryCapacity = batteryCapacity;
-        this.os = os;
-        this.memoryRom = memoryRom;
-        this.systemMemory = systemMemory;
-        this.cpu = cpu;
-        this.displayInchs = displayInchs;
-    }
-
     public Double getBatteryCapacity() {
         return batteryCapacity;
+    }
+
+    public void setBatteryCapacity(Double batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
     }
 
     public String getOs() {
         return os;
     }
 
+    public void setOs(String os) {
+        this.os = os;
+    }
+
     public Integer getMemoryRom() {
         return memoryRom;
+    }
+
+    public void setMemoryRom(Integer memoryRom) {
+        this.memoryRom = memoryRom;
     }
 
     public Integer getSystemMemory() {
         return systemMemory;
     }
 
+    public void setSystemMemory(Integer systemMemory) {
+        this.systemMemory = systemMemory;
+    }
+
     public Double getCpu() {
         return cpu;
     }
 
+    public void setCpu(Double cpu) {
+        this.cpu = cpu;
+    }
+
     public Integer getDisplayInchs() {
         return displayInchs;
+    }
+
+    public void setDisplayInchs(Integer displayInchs) {
+        this.displayInchs = displayInchs;
     }
 
     @Override
