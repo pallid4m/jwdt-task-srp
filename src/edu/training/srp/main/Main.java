@@ -1,5 +1,6 @@
 package edu.training.srp.main;
 
+import edu.training.srp.entity.Appliance;
 import edu.training.srp.entity.Laptop;
 import edu.training.srp.entity.criteria.Criteria;
 import edu.training.srp.entity.criteria.SearchCriteria;
@@ -12,7 +13,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-		List<Object> applianceList;
+		List<Appliance> applianceList;
 
 		ServiceFactory factory = ServiceFactory.getInstance();
 		ApplianceService service = factory.getApplianceService();

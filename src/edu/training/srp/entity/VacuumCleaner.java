@@ -2,7 +2,7 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class VacuumCleaner {
+public class VacuumCleaner implements Appliance {
     private final Integer powerConsumption;
     private final String filterType;
     private final String bagType;

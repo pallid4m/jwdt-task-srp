@@ -2,7 +2,7 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class TabletPC {
+public class TabletPC implements Appliance {
     private final Integer batteryCapacity;
     private final Integer displayInches;
     private final Integer memoryRom;

@@ -2,7 +2,7 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Laptop {
+public class Laptop implements Appliance {
     private final Double batteryCapacity;
     private final String os;
     private final Integer memoryRom;

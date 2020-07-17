@@ -1,6 +1,7 @@
 package edu.training.srp.dao.impl;
 
 import edu.training.srp.dao.exception.DAOException;
+import edu.training.srp.entity.Appliance;
 import edu.training.srp.entity.ApplianceFactory;
 import edu.training.srp.dao.ApplianceDAO;
 import edu.training.srp.dao.util.ApplianceFileUtil;
@@ -18,15 +19,15 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     private final String APPLIANCES_DB = "resources/appliances_db.txt";
 
     @Override
-    public List<Object> find(Criteria criteria) throws DAOException {
-        List<Object> applianceList;
+    public List<Appliance> find(Criteria criteria) throws DAOException {
+        List<Appliance> applianceList;
         try (Reader reader = new FileReader(APPLIANCES_DB); BufferedReader bufferedReader = new BufferedReader(reader)) {
             applianceList = bufferedReader.lines()
                     .filter(row -> ApplianceFileUtil.classMatch(criteria, row))
                     .filter(row -> ApplianceFileUtil.paramsMatch(criteria, row))
                     .map(row -> {
                         String[] params = ApplianceFileUtil.parseParams(row);
-                        return ApplianceFactory.createAppliance(criteria.getGroupSearchName(), params);
+                        return ApplianceFactory.getInstance().createAppliance(criteria.getGroupSearchName(), params);
                     })
                     .collect(Collectors.toList());
         } catch (IOException e) {

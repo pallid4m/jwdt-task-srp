@@ -2,7 +2,7 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Refrigerator {
+public class Refrigerator implements Appliance {
     private final Integer powerConsumption;
     private final Integer weight;
     private final Integer freezerCapacity;

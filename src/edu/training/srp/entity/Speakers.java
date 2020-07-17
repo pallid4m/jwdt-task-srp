@@ -2,7 +2,7 @@ package edu.training.srp.entity;
 
 import java.util.Objects;
 
-public class Speakers {
+public class Speakers implements Appliance {
     private final Integer powerConsumption;
     private final Integer numberOfSpeakers;
     private final String frequencyRange;
